@@ -1,0 +1,34 @@
+<p>employee works!</p>
+<div class="container">
+  <form (ngSubmit)="onEmpAdd(f)" #f="ngForm">
+    <div class="form-group">
+  <label>enter the name</label>
+  <input name="emp_name"  ngModel required #emp_name="ngModel" type="text" placeholder="enter name" class="form-control">
+  <label *ngIf="emp_name.hasError('required') && !emp_name.pristine" class="alert alert-danger"> name is required</label>
+
+  </div>
+
+  <div class="form-group">
+    <label>enter the Email</label>
+    <input name="emp_email"  ngModel required #emp_email="ngModel" type="text" placeholder="enter email" class="form-control">
+    <label *ngIf="emp_email.hasError('required') && !emp_email.pristine" class="alert alert-danger"> email is required</label>
+    </div>
+
+    <div class="form-group">
+      <label>enter the city</label>
+      <input name="emp_city"  ngModel required #emp_city="ngModel" type="text" placeholder="enter city" class="form-control">
+      <label *ngIf="emp_city.hasError('required') && !emp_city.pristine" class="alert alert-danger"> city is required</label>
+      </div>
+
+      <div class="form-group">
+        <label>enter the phone number</label>
+        <input name="emp_phone"  ngModel required #emp_phone="ngModel" type="number" placeholder="enter phone number" class="form-control">
+        <label *ngIf="emp_phone.hasError('required') && !emp_phone.pristine" class="alert alert-danger"> phone number is required</label>
+        </div>
+
+
+    <button type="submit" class="form-control btn btn-primary">
+      AddEmp
+    </button>
+  </form>
+  </div>
